@@ -19,14 +19,14 @@
 ## 1. Save the SpriteFrames Resource from the AnimSpr3D as something, then apply to AnimSpr2D.
 ## 2. Copy and paste AnimSpr3D, then right click, go to change type and change to AnimSpr2D. SpriteFramesResource will carry over.
 
-## Some tips for applying this in your own project.
+## Some tips if applying this in your own project:
 ## 1. For some reason, when applying a material as a material for the mesh, the viewport texture does not save locally or when instaniated.
 ## When applying to material overide, it works. IDK why, but it does lol
 ## 2. Make sure transparent BG is set to true for the subviewport for... transparancy
 ## 3. To enable proper bilboarding for the mesh, set Orientation to Face Z, then enable bilboarding in the material overide.
 ## 4. If texture is still blurry, set sampling to nearest in material overide
 
-## If you are unsure what viewports and viewport texture's are, check out the documentation here: 
+## If you have any uncertainity about viewports and how to use them, check out the documentation here: 
 ## https://docs.godotengine.org/en/stable/tutorials/rendering/viewports.html
 
 ## Shader credits:

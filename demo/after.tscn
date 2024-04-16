@@ -20,13 +20,13 @@ orientation = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8pbkq"]
 shader = ExtResource("3_0260p")
 shader_parameter/keep_luminance = false
-shader_parameter/color_start = Color(1, 1, 1, 1)
-shader_parameter/start_pos = 0.0
-shader_parameter/color_mid = Color(1, 1, 1, 1)
-shader_parameter/mid_pos = 0.5
-shader_parameter/color_end = Color(1, 1, 1, 1)
+shader_parameter/color_start = Color(0, 0, 0.219608, 1)
+shader_parameter/start_pos = 0.1
+shader_parameter/color_mid = Color(0.105882, 0.227451, 0.027451, 1)
+shader_parameter/mid_pos = 0.81
+shader_parameter/color_end = Color(0, 0.431373, 0.25098, 1)
 shader_parameter/end_pos = 0.99
-shader_parameter/midpos_enabled = false
+shader_parameter/midpos_enabled = true
 shader_parameter/effect_filling = 1.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8no3k"]
@@ -155,5 +155,5 @@ size = Vector2i(48, 48)
 material = SubResource("ShaderMaterial_7wtqd")
 sprite_frames = SubResource("SpriteFrames_pjjjs")
 animation = &"Spin"
-frame_progress = 0.639724
+frame_progress = 0.814397
 offset = Vector2(24, 24)
