@@ -1,0 +1,132 @@
+[gd_scene load_steps=18 format=3 uid="uid://dem6fcyxyrv4o"]
+
+[ext_resource type="Script" path="res://demo/After.gd" id="1_h2oog"]
+[ext_resource type="Texture2D" uid="uid://cnwjinu1vk640" path="res://assets/anim_spr.png" id="2_g16bh"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w76h3"]
+viewport_path = NodePath("SpriteMesh/SpriteViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksk3e"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_w76h3")
+texture_filter = 0
+billboard_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_byr25"]
+orientation = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8no3k"]
+viewport_path = NodePath("AnimSpriteMesh/AnimSpriteViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3m3f6"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_8no3k")
+texture_filter = 0
+billboard_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5ttdh"]
+orientation = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ao2"]
+atlas = ExtResource("2_g16bh")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c2qt"]
+atlas = ExtResource("2_g16bh")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rje0"]
+atlas = ExtResource("2_g16bh")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar2f6"]
+atlas = ExtResource("2_g16bh")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7fjf"]
+atlas = ExtResource("2_g16bh")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txp1y"]
+atlas = ExtResource("2_g16bh")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt0bc"]
+atlas = ExtResource("2_g16bh")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2el6"]
+atlas = ExtResource("2_g16bh")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjjjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ao2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c2qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rje0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar2f6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7fjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txp1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt0bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2el6")
+}],
+"loop": true,
+"name": &"Spin",
+"speed": 4.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="After" type="Node3D"]
+script = ExtResource("1_h2oog")
+
+[node name="SpriteMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62108, 0, 0)
+material_override = SubResource("StandardMaterial3D_ksk3e")
+mesh = SubResource("PlaneMesh_byr25")
+
+[node name="SpriteViewport" type="SubViewport" parent="SpriteMesh"]
+transparent_bg = true
+size = Vector2i(48, 48)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteMesh/SpriteViewport"]
+texture = ExtResource("2_g16bh")
+offset = Vector2(24, 24)
+hframes = 5
+vframes = 5
+
+[node name="AnimSpriteMesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_3m3f6")
+mesh = SubResource("PlaneMesh_5ttdh")
+skeleton = NodePath("")
+
+[node name="AnimSpriteViewport" type="SubViewport" parent="AnimSpriteMesh"]
+transparent_bg = true
+size = Vector2i(48, 48)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimSpriteMesh/AnimSpriteViewport"]
+sprite_frames = SubResource("SpriteFrames_pjjjs")
+animation = &"Spin"
+frame_progress = 0.42009
+offset = Vector2(24, 24)

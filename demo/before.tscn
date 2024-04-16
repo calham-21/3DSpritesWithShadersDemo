@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://5iw3jq2iabl8"]
+
+[ext_resource type="Script" path="res://demo/Before.gd" id="1_kgdk0"]
+[ext_resource type="Texture2D" uid="uid://cnwjinu1vk640" path="res://assets/anim_spr.png" id="2_by2ka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ao2"]
+atlas = ExtResource("2_by2ka")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c2qt"]
+atlas = ExtResource("2_by2ka")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rje0"]
+atlas = ExtResource("2_by2ka")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar2f6"]
+atlas = ExtResource("2_by2ka")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7fjf"]
+atlas = ExtResource("2_by2ka")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txp1y"]
+atlas = ExtResource("2_by2ka")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt0bc"]
+atlas = ExtResource("2_by2ka")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2el6"]
+atlas = ExtResource("2_by2ka")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1b6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ao2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c2qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rje0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar2f6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7fjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txp1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt0bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2el6")
+}],
+"loop": true,
+"name": &"Spin",
+"speed": 4.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Before" type="Node3D"]
+script = ExtResource("1_kgdk0")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_e1b6h")
+animation = &"Spin"
+frame_progress = 0.914817
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.632814, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_by2ka")
+hframes = 5
+vframes = 5
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.994544, -0.10432, 0, 0.10432, 0.994544, -0.222688, 0.183803, 1.12038)
+visible = false
