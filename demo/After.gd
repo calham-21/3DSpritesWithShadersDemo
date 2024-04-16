@@ -11,6 +11,7 @@
 ## texture for the MeshInstances!
 
 ## After all that, you can apply shaders to the 2DSprites and they will carry over into 3D.
+## A shader is already attached to the two 2D sprites. Play around with the values if you want!
 
 ##----------------NOTES ------------------
 ## For AnimatedSprites3D's, you may have one that has a bunch of different animations, and really don't want
@@ -28,8 +29,11 @@
 ## If you are unsure what viewports and viewport texture's are, check out the documentation here: 
 ## https://docs.godotengine.org/en/stable/tutorials/rendering/viewports.html
 
-extends Node3D
+## Shader credits:
+## https://godotshaders.com/shader/gradient-mapping/
 
+@tool
+extends Node3D
 @onready var spr : Sprite2D = $SpriteMesh/SpriteViewport/Sprite2D
 @onready var anim_spr : AnimatedSprite2D = $AnimSpriteMesh/AnimSpriteViewport/AnimatedSprite2D
 

@@ -8,7 +8,7 @@
 ## you will be presented with a blank white square. Obviously this is undesirable,
 ## but an easy work-around can be done without insane code logic and shader magic.
 ## You can see how on the after scene, or if you just read the reddit post, then who cares.
-
+@tool
 extends Node3D
 
 @onready var spr: Sprite3D = $Sprite3D

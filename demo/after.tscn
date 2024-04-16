@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dem6fcyxyrv4o"]
+[gd_scene load_steps=21 format=3 uid="uid://dem6fcyxyrv4o"]
 
 [ext_resource type="Script" path="res://demo/After.gd" id="1_h2oog"]
 [ext_resource type="Texture2D" uid="uid://cnwjinu1vk640" path="res://assets/anim_spr.png" id="2_g16bh"]
+[ext_resource type="Shader" path="res://shaders/gradient_mapping.gdshader" id="3_0260p"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_w76h3"]
 viewport_path = NodePath("SpriteMesh/SpriteViewport")
@@ -16,6 +17,18 @@ billboard_mode = 2
 [sub_resource type="PlaneMesh" id="PlaneMesh_byr25"]
 orientation = 2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pbkq"]
+shader = ExtResource("3_0260p")
+shader_parameter/keep_luminance = false
+shader_parameter/color_start = Color(1, 1, 1, 1)
+shader_parameter/start_pos = 0.0
+shader_parameter/color_mid = Color(1, 1, 1, 1)
+shader_parameter/mid_pos = 0.5
+shader_parameter/color_end = Color(1, 1, 1, 1)
+shader_parameter/end_pos = 0.99
+shader_parameter/midpos_enabled = false
+shader_parameter/effect_filling = 1.0
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_8no3k"]
 viewport_path = NodePath("AnimSpriteMesh/AnimSpriteViewport")
 
@@ -28,6 +41,18 @@ billboard_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5ttdh"]
 orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wtqd"]
+shader = ExtResource("3_0260p")
+shader_parameter/keep_luminance = false
+shader_parameter/color_start = Color(0.368627, 0.00784314, 0.196078, 1)
+shader_parameter/start_pos = 0.22
+shader_parameter/color_mid = Color(0.607843, 0, 0.156863, 1)
+shader_parameter/mid_pos = 0.65
+shader_parameter/color_end = Color(1, 0.243137, 0.513726, 1)
+shader_parameter/end_pos = 0.99
+shader_parameter/midpos_enabled = true
+shader_parameter/effect_filling = 0.8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4ao2"]
 atlas = ExtResource("2_g16bh")
@@ -111,6 +136,7 @@ transparent_bg = true
 size = Vector2i(48, 48)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteMesh/SpriteViewport"]
+material = SubResource("ShaderMaterial_8pbkq")
 texture = ExtResource("2_g16bh")
 offset = Vector2(24, 24)
 hframes = 5
@@ -126,7 +152,8 @@ transparent_bg = true
 size = Vector2i(48, 48)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimSpriteMesh/AnimSpriteViewport"]
+material = SubResource("ShaderMaterial_7wtqd")
 sprite_frames = SubResource("SpriteFrames_pjjjs")
 animation = &"Spin"
-frame_progress = 0.42009
+frame_progress = 0.639724
 offset = Vector2(24, 24)
