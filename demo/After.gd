@@ -31,7 +31,6 @@
 
 ## Shader credits:
 ## https://godotshaders.com/shader/gradient-mapping/
-
 @tool
 extends Node3D
 @onready var spr : Sprite2D = $SpriteMesh/SpriteViewport/Sprite2D
