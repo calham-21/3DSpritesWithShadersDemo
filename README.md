@@ -3,7 +3,8 @@ A demo project that demonstrations how to apply shaders to Sprite3D's in Godot.
 As of Godot 4.2, shaders do not work on Sprites3D as they would with Sprites2D.
 This project demonstrates how to make them work! 
 
-Quick Breakdown: Instead of using a Sprite3D, the fix instead uses a Sprite2D, which is the child of a subviewport. 
+**Quick Breakdown:**
+Instead of using a Sprite3D, the fix instead uses a Sprite2D, which is the child of a subviewport. 
 That subviewport is then set as the Albedo texture of a MeshInstance3D's Material Override property.
 A plane is set as the mesh, orientated to the Z axis and has Bilboarding turned on within the Material.
 
