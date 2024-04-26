@@ -9,6 +9,8 @@ That subviewport is then set as the Albedo texture of a MeshInstance3D's Materia
 A plane is set as the mesh, orientated to the Z axis and has Bilboarding turned on within the Material.
 Until Sprite3D's are able to support shader's natively, this fix will do the job for older versions without overcomplicated shader magic.
 
+For more details, read the scripts for the before and after scenes.
+
 (NOTE: Use CanvasItem Shaders instead of Spatial. You can find a ton of free shaders here: https://godotshaders.com/)
 
 Here is a screenshot of the fix. A color gradient shader is applied in this scene:
