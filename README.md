@@ -8,7 +8,11 @@ That subviewport is then set as the Albedo texture of a MeshInstance3D's Materia
 A plane is set as the mesh, orientated to the Z axis and has Bilboarding turned on within the Material.
 
 Here is a screenshot of the fix. A color gradient shader is applied in this scene:
+
 ![image](https://github.com/calham-21/3DSpritesWithShadersDemo/assets/148737596/fd35b196-aa46-4e4f-81f1-cfefbd518c3c)
 
+
+
 And here was the original asset this shader is applied too:
+
 ![anim_spr](https://github.com/calham-21/3DSpritesWithShadersDemo/assets/148737596/ad9a3828-6e34-47b1-85f5-e2f52f63c8e8)
