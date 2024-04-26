@@ -19,4 +19,5 @@ Here is a screenshot of the fix. A color gradient shader is applied in this scen
 And here was the original asset this shader is applied too:
 
 ![anim_spr](https://github.com/calham-21/3DSpritesWithShadersDemo/assets/148737596/ad9a3828-6e34-47b1-85f5-e2f52f63c8e8)
+
 Until Sprite3D's are able to support shader's natively, this fix will do the job for older versions without overcomplicated shader magic.
