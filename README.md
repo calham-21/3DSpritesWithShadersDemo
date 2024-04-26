@@ -7,6 +7,7 @@ This project demonstrates how to make them work!
 Instead of using a Sprite3D, the fix instead uses a Sprite2D, which is the child of a subviewport. 
 That subviewport is then set as the Albedo texture of a MeshInstance3D's Material Override property.
 A plane is set as the mesh, orientated to the Z axis and has Bilboarding turned on within the Material.
+Until Sprite3D's are able to support shader's natively, this fix will do the job for older versions without overcomplicated shader magic.
 
 (NOTE: Use CanvasItem Shaders instead of Spatial. You can find a ton of free shaders here: https://godotshaders.com/)
 
@@ -20,4 +21,3 @@ And here was the original asset this shader is applied too:
 
 ![anim_spr](https://github.com/calham-21/3DSpritesWithShadersDemo/assets/148737596/ad9a3828-6e34-47b1-85f5-e2f52f63c8e8)
 
-Until Sprite3D's are able to support shader's natively, this fix will do the job for older versions without overcomplicated shader magic.
